@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Marcos Paulo">
+    <title>Coin converter</title>
+    <link rel="shortcut icon" href="img/favicon.svg" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!--Conteudo cabeçalho do site-->
+    <header>
+        <section class="containerHeader">
+
+            <div class="containerText">
+                <h1>Conversor de moedas</h1>
+                <span>Descubra a cotação de algumas moedas</span>
+            </div>
+
+            <!--Logo da imersão dev-->
+            <div class="containerImg">
+                <img src="img/imersao_dev.svg" alt="imersao dev logo">
+            </div>
+
+        </section>
+    </header>
+
+    <!--Conteudo principal do site-->
+    <main>
+        <section class="containerMain">
+
+            <!--Div com o select para selecionar o tipo da moeda e o input number para o valor-->
+            <div class="containerInput">
+                
+                <!--Input para colocar o valor-->
+                <div>
+                    <label for="valor" id="labelValor">$</label>
+                    <input type="number" name="valor" class="input" placeholder="valor" id="value">
+                </div>
+
+                <!--Select com as opçoes de conversão-->
+                <div>
+                    <select name="coins" class="input" id="coin">
+                        <optgroup label="Converter para Real">
+                            <option value="USD" selected>Dólar</option>
+                            <option value="USDT" selected>Dólar turistico</option>
+                            <option value="CAD">Dólar canadense</option>
+                            <option value="EUR">Euro</option>
+                            <option value="GBP">Libra esterlina</option>
+                            <option value="CHF" selected>Franco suíço</option>
+                            <option value="ARS">Peso argentino</option>
+                            <option value="JPY">Iene japonês</option>
+                            <option value="CNY">Yuan chinês</option>
+                        </optgroup>
+                        <optgroup label="Criptomoedas para Real">
+                            <option value="BTC">Bitcoin</option>
+                            <option value="LTC">Litecoin</option>
+                            <option value="ETH">Ethereum</option>
+                        </optgroup>
+                    </select>
+                </div>
+            </div>
+
+            <!--Botão para iniciar a conversão e chamar o pop-up modal-->
+            <button type="button" name="enviar" class="btnConvert" onclick="currencyValue()">Converter</button>
+
+        </section>
+    </main>
+
+    <!--Link para o site da alura-->
+    <aside class="aluraLink">
+        <a href="https://www.alura.com.br" target="_blank">
+            <img src="img/alura_logo.svg" alt="alura logo">
+        </a>
+    </aside>
+
+    <!--Modal para mostrar o resultado da conversão-->
+    <div class="containerModal" id="modal">
+        <div class="close">
+            <span onclick="closeModal()">✖️</span>
+        </div>
+
+        <div id="result">
+            <!--Aqui vai ficar o html com os valores dinamicos gerado no javascript-->
+        </div>
+
+    </div>
+
+    <script src="currencyValue.js"></script>
+</body>
+</html>
